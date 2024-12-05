@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #002b5c; /* Azul escuro */
+  color: white;
+}
+.footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #002b5c;
+  color: white;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+

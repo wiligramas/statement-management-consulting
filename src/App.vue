@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <Header />
+    <Feature />
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Header from "@/components/HeaderBar.vue";
+import Footer from "@/components/FooterBar.vue";
+import Feature from "@/components/FeatureCard.vue";
 
-nav {
-  padding: 30px;
+export default {
+  components: {
+    Header,
+    Footer,
+    Feature,
+  },
+};
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style>
+/* Aqui você pode adicionar estilos globais */
 </style>
+
