@@ -1,73 +1,163 @@
 <template>
-  <div class="contact">
-    <section class="hero">
-      <h1>Entre em Contato</h1>
-      <p>Estamos prontos para ajudar. Envie-nos uma mensagem!</p>
-    </section>
-    <section class="form">
-      <form @submit.prevent="handleSubmit">
-        <div>
-          <label for="name">Nome:</label>
-          <input type="text" id="name" v-model="formData.name" required />
+  <section class="contact-us">
+    <h1 class="contact-title">Contact-Us</h1>
+    <div class="contact-info">
+      <div class="contact-location">
+        <h2>Luanda</h2>
+        <p>Avenida Lenine,</p>
+        <p>Torres Oceano,</p>
+        <p>Torre A, 21ºA</p>
+        <p>Ingombota</p>
+        <p>Luanda, Angola</p>
+        <br />
+        <p>
+          <strong>Voice:</strong> +244 226 425 400
+        </p>
+        <p>
+          <strong>Fax:</strong> +244 226 425 401
+        </p>
+      </div>
+    </div>
+  </section>
+   <!-- Formulário de Contato -->
+    <div class="contact-form">
+      <h3>Type of Inquiry*</h3>
+      <form>
+        <div class="form-group">
+          <label>
+            <input type="radio" name="inquiry" value="general" /> Client Services & General Inquiries
+          </label>
+          <label>
+            <input type="radio" name="inquiry" value="media" /> Media Inquiries
+          </label>
+          <label>
+            <input type="radio" name="inquiry" value="recruiting" /> Recruiting Inquiries
+          </label>
         </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="formData.email" required />
+        <div class="form-group">
+          <label for="name">Name*</label>
+          <input type="text" id="name" placeholder="Enter your name" />
         </div>
-        <div>
-          <label for="message">Mensagem:</label>
-          <textarea id="message" v-model="formData.message" required></textarea>
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" placeholder="Enter your email" />
         </div>
-        <button type="submit">Enviar</button>
+        <div class="form-group">
+          <label for="subject">Subject*</label>
+          <input type="text" id="subject" placeholder="Enter subject" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message*</label>
+          <textarea id="message" placeholder="Write your message"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
       </form>
-    </section>
-  </div>
+    </div>
 </template>
 
 <script>
 export default {
   name: "ContactPage",
-  data() {
-    return {
-      formData: {
-        name: "",
-        email: "",
-        message: "",
-      },
-    };
-  },
-  methods: {
-    handleSubmit() {
-      alert(`Mensagem enviada por ${this.formData.name}!`);
-    },
-  },
 };
 </script>
 
 <style scoped>
-.contact .hero {
-  padding: 50px;
-  background-color: #002b5c;
-  color: white;
+.contact-us {
   text-align: center;
+  padding: 60px 20px; /* Espaço ao redor do conteúdo */
+  font-family: "Arial", sans-serif;
+  color: #00274d;
 }
-.form {
-  padding: 20px;
-  max-width: 600px;
+
+.contact-title {
+  font-size: 42px; /* Aumenta o tamanho do título */
+  font-weight: bold;
+  margin-bottom: 50px; /* Espaçamento abaixo do título */
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+.contact-location {
+  background-color: #00274d; /* Fundo azul-escuro */
+  color: #fff; /* Texto branco */
+  padding: 40px; /* Espaço interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 80%; /* Ocupa 80% da largura da tela */
+  text-align: left; /* Texto alinhado à esquerda */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+}
+.contact-location h2 {
+  font-size: 28px; /* Tamanho do título */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-location p {
+  font-size: 18px; /* Tamanho do texto */
+  margin: 8px 0; /* Espaçamento entre as linhas */
+  line-height: 1.8; /* Espaçamento entre as linhas */
+}
+
+.contact-location strong {
+  font-weight: bold;
+}
+
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
   margin: 0 auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
-form div {
-  margin-bottom: 15px;
+
+.contact-form h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
-button {
-  background-color: #002b5c;
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 120px;
+}
+
+.submit-button {
+  background-color: #00274d;
   color: white;
   padding: 10px 20px;
   border: none;
-  cursor: pointer;
   border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
-button:hover {
+
+.submit-button:hover {
   background-color: #004080;
 }
+
 </style>
