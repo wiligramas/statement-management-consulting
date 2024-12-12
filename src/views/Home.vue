@@ -1,57 +1,87 @@
 <template>
   <div class="home">
-    <!-- Seção Hero -->
-    <section class="hero"> 
-      <h3>Orientando Empresas Rumo ao Sucesso<br> Estratégico</h3>
-      <img src="@/assets/images/Banner.jpg" alt="Descrição da imagem" class="hero-image" />
+    <!-- 1.1. Banner Principal -->
+    <section class="banner">
+      <div class="banner-content">
+        <h1>Inovação e Estratégia para o Sucesso do Seu Negócio</h1>
+        <p>Transformando desafios em oportunidades estratégicas.</p>
+        <button class="cta-button">Veja como podemos ajudar você</button>
+      </div>
+      <img src="@/assets/images/banner-placeholder.jpg" alt="Banner Principal" class="banner-image" />
     </section>
 
-    <!-- Header Azul Escuro -->
-    <section class="azul-header"></section>
-
-    <!-- Sessão Transformando desafios -->
-    <section class="highlight">
-      <div class="highlight-content">
-        <div class="text-section">
-          <h3>Transformando desafios em oportunidades estratégicas</h3>
+    <!-- 1.2. Sobre Nós -->
+    <section class="about-us">
+      <h2 class="section-title">Quem Somos</h2>
+      <div class="about-content">
+        <div class="text-content">
           <p>
-            A Statement Management Consulting é a parceira ideal para empresas e projetos que buscam superar desafios estratégicos e processuais. Nosso time altamente capacitado oferece soluções personalizadas que conectam o nível operacional ao estratégico, promovendo resultados sustentáveis e impacto real.
-            Explore como podemos ajudar a transformar sua visão em realidade.
+            A <strong>Statement Management Consulting</strong> é reconhecida como uma referência em consultoria de negócios, oferecendo soluções inovadoras e altamente personalizadas para enfrentar desafios estratégicos e operacionais. Nossa abordagem é orientada por análises profundas, estratégias inteligentes e um compromisso inabalável com a excelência.
           </p>
-          <button class="cta-button">Cadastre-se no evento</button>
+          <p>
+            Com uma equipe de especialistas altamente qualificados e vasta experiência em diversos setores, capacitamos empresas a alcançar resultados sustentáveis, impulsionando o crescimento e a competitividade em mercados cada vez mais dinâmicos e desafiadores. Trabalhamos lado a lado com nossos clientes para transformar desafios complexos em oportunidades de sucesso duradouro.
+          </p>
         </div>
-        <div class="image-section">
-          <img src="@/assets/images/highlight-image.jpg" alt="Destaque IA" />
-        </div>
+        <img src="@/assets/images/team-placeholder.jpg" alt="Equipe da Empresa" class="about-image" />
       </div>
     </section>
 
-    <!-- Sessão Call to Action -->
-    <section class="cta-section">
-      <div class="cta-content">
-        <h2>Descubra nossos serviços</h2>
-        <p>Entre em contato conosco agora mesmo!</p>
-        <button class="cta-contact-button">Fale Conosco</button>
-      </div>
-    </section>
 
-    <!-- Sessão Novo e Notável -->
-    <section class="new-and-notable">
-      <div class="left-text">
-        <h2>NOTICIAS</h2>
-        <h3>DESTAQUES DA SEMANA</h3>
-      </div>
-      <div class="carousel">
-        <div class="carousel-item" v-for="n in 4" :key="n">
-          <div class="card">
-            <h4>Título do Artigo {{ n }}</h4>
-            <p>Descrição breve do artigo ou relatório relacionado</p>
-          </div>
-        </div>
-      </div>
-      <button class="info-button">ENCONTRE MAIS INFORMAÇÕES</button>
-    </section>
+    <section class="services">
+  <h2 class="section-title">O Que Fazemos</h2>
+  <div class="services-container">
+    <div class="service">
+      <img src="@/assets/images/strategy-placeholder.jpg" alt="Estratégia Empresarial" class="service-image" />
+      <h3>Estratégia Empresarial</h3>
+      <p>
+        Criamos estratégias sob medida que ajudam sua empresa a alcançar objetivos ambiciosos, identificando oportunidades e fortalecendo sua posição no mercado. Nossa abordagem é orientada por dados e insights de mercado, garantindo decisões assertivas e sucesso a longo prazo.
+      </p>
+    </div>
+    <div class="service">
+      <img src="@/assets/images/digital-transformation-placeholder.jpg" alt="Transformação Digital" class="service-image" />
+      <h3>Transformação Digital</h3>
+      <p>
+        Capacitamos sua organização para prosperar na era digital, implementando tecnologias inovadoras e otimizando processos para aumentar a eficiência, melhorar a experiência do cliente e criar vantagem competitiva.
+      </p>
+    </div>
+    <div class="service">
+      <img src="@/assets/images/process-management-placeholder.jpg" alt="Gestão de Processos" class="service-image" />
+      <h3>Gestão de Processos</h3>
+      <p>
+        Reestruturamos e otimizamos processos internos para garantir máxima produtividade e qualidade. Nossos especialistas utilizam práticas modernas de gestão para reduzir custos e aumentar a eficiência operacional.
+      </p>
+    </div>
+    <div class="service">
+      <img src="@/assets/images/organizational-development-placeholder.jpg" alt="Desenvolvimento Organizacional" class="service-image" />
+      <h3>Desenvolvimento Organizacional</h3>
+      <p>
+        Fortalecemos a cultura organizacional e capacitamos equipes para impulsionar o crescimento e a inovação. Oferecemos consultoria em liderança, gestão de mudanças e programas de desenvolvimento contínuo.
+      </p>
+    </div>
   </div>
+  <button class="cta-button">Saiba mais sobre nosso portfólio</button>
+</section>
+
+  <section class="testimonials">
+  <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+  <div class="testimonials-container">
+    <div class="testimonial">
+      <img src="@/assets/images/avatar-placeholder.jpg" alt="João Silva" class="testimonial-image" />
+      <blockquote>
+        "A Statement Management Consulting trouxe clareza estratégica para nossa empresa. Graças à sua abordagem inovadora, conseguimos superar desafios complexos e alcançar um crescimento sustentável."
+      </blockquote>
+      <p class="testimonial-author">- João Silva, CEO de Empresa X</p>
+    </div>
+    <div class="testimonial">
+      <img src="@/assets/images/avatar-placeholder.jpg" alt="Maria Oliveira" class="testimonial-image" />
+      <blockquote>
+        "A equipe da Statement Management Consulting não apenas compreendeu nossas necessidades, mas também entregou soluções que transformaram a eficiência do nosso negócio. É uma parceria que realmente faz a diferença."
+      </blockquote>
+      <p class="testimonial-author">- Maria Oliveira, Diretora de Empresa Y</p>
+    </div>
+  </div>
+</section>
+</div>
 </template>
 
 <script>
@@ -61,173 +91,300 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos Gerais */
+/* Estilo geral */
 .home {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.hero {
+/* 1.1. Banner Principal */
+/* Importar fonte elegante do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+/* Aplicar a fonte globalmente */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1.1. Banner Principal */
+.banner {
+  position: relative;
   text-align: center;
-  background-color: #f5f5f5;
-  padding: 20px;
-}
-
-.hero h3 {
-  font-size: 2.5em;
-  color: #00274d;
-}
-
-.hero-image {
-  width: 90%;
-  max-width: 1600px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Azul Escuro */
-.azul-header {
-  text-align: center;
-  background-color: #f9f9f9;
-  padding: 1rem 2rem;
   color: white;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif; /* Fonte elegante para o banner */
 }
 
-/* Sessão Vantagem da IA */
-.highlight {
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner h1 {
+  font-size: 3.5em; /* Aumenta o tamanho da fonte */
+  font-weight: 700; /* Estilo negrito */
+  margin: 10px 0;
+  letter-spacing: 2px; /* Espaçamento elegante entre letras */
+  line-height: 1.2; /* Melhora o espaçamento entre linhas */
+}
+
+.banner p {
+  font-size: 1.5em; /* Aumenta o tamanho da fonte */
+  font-weight: 400; /* Estilo regular */
+  margin: 10px 0 20px;
+  letter-spacing: 1.5px;
+}
+
+.cta-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 15px 30px; /* Botão maior */
+  font-size: 1.2em; /* Texto do botão maior */
+  font-weight: 700;
+  text-transform: uppercase; /* Texto em maiúsculas */
+  border: none;
+  border-radius: 30px; /* Cantos arredondados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #003d82; /* Alteração de cor no hover */
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  z-index: 1;
+}
+
+/* 1.2. Sobre Nós */
+/* Estilo geral da seção */
+.about-us {
+  padding: 60px 20px;
   background-color: #f9f9f9;
-  padding: 40px 0;
+  text-align: center;
 }
 
-.highlight-content {
+.section-title {
+  font-family: 'Playfair Display', serif; /* Fonte elegante */
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #00274d;
+  margin-bottom: 20px;
+}
+
+.about-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.text-section,
-.image-section {
-  width: 50%;
-}
-
-.text-section h3 {
+.text-content {
+  max-width: 600px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
   color: #333;
-  font-size: 1.5em;
+  line-height: 1.8;
+  font-size: 1.1em;
 }
 
-.text-section p {
-  color: #555;
-  line-height: 1.8;
+.text-content p {
+  margin-bottom: 20px;
+}
+
+.text-content strong {
+  color: #0056b3; /* Destaque na marca */
+}
+
+.about-image {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efeito de profundidade */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Zoom suave ao passar o mouse */
+}
+
+/* Estilo da seção Nossos Serviços */
+.services {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #00274d;
+  margin-bottom: 30px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.service {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #0056b3;
+  padding: 15px 20px;
+}
+
+.service p {
+  font-family: 'Roboto', sans-serif;
   font-size: 1em;
+  color: #555;
+  padding: 0 20px 20px;
+  line-height: 1.6;
 }
 
 .cta-button {
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #006400;
+  margin-top: 30px;
+  background-color: #0056b3;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1em;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #004d00;
+  background-color: #003f88;
 }
 
-.image-section img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-/* Sessão Call to Action */
-.cta-section {
-  background-color: #f5f5f5;
-  color: #00274d;
+/* Estilo da seção Depoimentos */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #f4f7fa;
   text-align: center;
-  padding: 40px 20px;
 }
 
-.cta-section h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.cta-section p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.cta-contact-button {
-  padding: 10px 25px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #006400;
-  border: none;
-  cursor: pointer;
-}
-
-.cta-contact-button:hover {
-  background-color: #004d00;
-}
-
-/* Sessão Novo e Notável */
-.new-and-notable {
-  background-color: #eaeaea;
-  padding: 40px 20px;
-}
-
-.left-text {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.left-text h2 {
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  font-weight: 700;
   color: #00274d;
+  margin-bottom: 40px;
 }
 
-.left-text h3 {
-  color: #555;
-}
-
-.carousel {
+.testimonials-container {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 }
 
-.carousel-item {
-  flex: 0 0 30%;
+.testimonial {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover {
-  transform: scale(1.05);
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #0056b3;
 }
 
-.info-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #006400;
-  border: none;
-  cursor: pointer;
+blockquote {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  position: relative;
 }
 
-.info-button:hover {
-  background-color: #004d00;
+blockquote:before {
+  content: "“";
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: #0056b3;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+blockquote:after {
+  content: "”";
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: #0056b3;
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+}
+
+.testimonial-author {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+  margin-top: 10px;
 }
 </style>
