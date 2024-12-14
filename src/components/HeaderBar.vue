@@ -11,10 +11,6 @@
           </li>
           <li class="nav-item dropdown">
             <router-link to="/Services">Portfólio</router-link>
-            <ul class="dropdown-menu">
-              <li><router-link to="/services#strategy">Strategy</router-link></li>
-              <li><router-link to="/services#consulting">Consulting</router-link></li>
-            </ul>
           </li>
           <li class="nav-item">
             <router-link to="/about">Carreira</router-link>

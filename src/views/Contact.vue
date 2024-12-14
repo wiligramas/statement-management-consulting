@@ -3,7 +3,7 @@
     <!-- Título Principal -->
     <h1 class="contact-title">Estamos Aqui Para Ajudar</h1>
 
-    <!-- 5.1. Formulário de Contato -->
+    <!-- Formulário de Contato -->
     <section class="contact-form">
       <h2>Fale Conosco</h2>
       <form>
@@ -27,7 +27,7 @@
       </form>
     </section>
 
-    <!-- 5.2. Mapa e Localização -->
+    <!-- Mapa e Localização -->
     <section class="location">
       <h2>Onde Estamos</h2>
       <p>Visite-nos em nosso escritório para uma consulta.</p>
@@ -37,7 +37,7 @@
       </div>
     </section>
 
-    <!-- 5.3. Redes Sociais -->
+    <!-- Redes Sociais -->
     <section class="social-media">
       <h2>Conecte-se Conosco</h2>
       <p>Fique por dentro das novidades e tendências seguindo nossas redes sociais:</p>
@@ -75,58 +75,58 @@ export default {
 
 /* Título Principal */
 .contact-title {
-  font-size: 36px;
+  font-size: 2.25rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 /* Formulário de Contato */
 .contact-form {
   background-color: #f9f9f9;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  padding: 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
 }
 
 .contact-form h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
   text-align: center;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 label {
   display: block;
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin-bottom: 0.3125rem;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
 }
 
 textarea {
-  height: 100px;
+  height: 6.25rem;
 }
 
 .submit-button {
   background-color: #002b5c;
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 1rem;
+  margin-top: 0.625rem;
 }
 
 .submit-button:hover {
@@ -136,18 +136,18 @@ textarea {
 /* Mapa e Localização */
 .location {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .location h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 1.75rem;
+  margin-bottom: 0.625rem;
 }
 
 .map img {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
 }
 
 /* Redes Sociais */
@@ -156,15 +156,15 @@ textarea {
 }
 
 .social-media h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 1.75rem;
+  margin-bottom: 0.625rem;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .social-link {
@@ -172,12 +172,44 @@ textarea {
   align-items: center;
   text-decoration: none;
   color: #002b5c;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .social-link img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-form, .location, .social-media {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form h2,
+  .location h2,
+  .social-media h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 0.875rem;
+  }
+  
+  .submit-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
 }
 </style>

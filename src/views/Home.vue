@@ -3,9 +3,10 @@
     <!-- 1.1. Banner Principal -->
     <section class="banner">
       <div class="banner-content">
-        <h1>Inovação e Estratégia para o Sucesso do Seu Negócio</h1>
+        
+        <h1>Inovação e Estratégia para<br> o Sucesso do Seu Negócio</h1>
         <p>Transformando desafios em oportunidades estratégicas.</p>
-        <button class="cta-button">Veja como podemos ajudar você</button>
+        <button class="cta-button">Saiba Mais</button>
       </div>
       <img src="@/assets/images/banner-placeholder.jpg" alt="Banner Principal" class="banner-image" />
     </section>
@@ -28,7 +29,7 @@
 
 
     <section class="services">
-  <h2 class="section-title">O Que Fazemos</h2>
+  <h2 class="section-title-1">O Que Fazemos</h2>
   <div class="services-container">
     <div class="service">
       <img src="@/assets/images/strategy-placeholder.jpg" alt="Estratégia Empresarial" class="service-image" />
@@ -63,7 +64,7 @@
 </section>
 
   <section class="testimonials">
-  <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+  <h2 class="section-title-2">O Que Nossos Clientes Dizem</h2>
   <div class="testimonials-container">
     <div class="testimonial">
       <img src="@/assets/images/avatar-placeholder.jpg" alt="João Silva" class="testimonial-image" />
@@ -93,52 +94,47 @@ export default {
 <style scoped>
 /* Estilo geral */
 .home {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 /* 1.1. Banner Principal */
-/* Importar fonte elegante do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
-
-/* Aplicar a fonte globalmente */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* 1.1. Banner Principal */
 .banner {
   position: relative;
-  text-align: center;
   color: white;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Playfair Display', serif; /* Fonte elegante para o banner */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .banner-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 2;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: left; /* Realinha o texto à esquerda */
+  margin-left: 10%; /* Move o conteúdo para a esquerda */
 }
 
 .banner h1 {
-  font-size: 3.5em; /* Aumenta o tamanho da fonte */
-  font-weight: 700; /* Estilo negrito */
+  font-size: 3.5em;
+  font-weight: 700;
   margin: 10px 0;
-  letter-spacing: 2px; /* Espaçamento elegante entre letras */
-  line-height: 1.2; /* Melhora o espaçamento entre linhas */
+  letter-spacing: 2px;
+  line-height: 1.2;
 }
 
 .banner p {
-  font-size: 1.5em; /* Aumenta o tamanho da fonte */
-  font-weight: 400; /* Estilo regular */
+  font-size: 1.5em;
+  font-weight: 400;
   margin: 10px 0 20px;
   letter-spacing: 1.5px;
 }
@@ -146,18 +142,18 @@ body {
 .cta-button {
   background-color: #0056b3;
   color: white;
-  padding: 15px 30px; /* Botão maior */
-  font-size: 1.2em; /* Texto do botão maior */
+  padding: 15px 30px;
+  font-size: 1.2em;
   font-weight: 700;
-  text-transform: uppercase; /* Texto em maiúsculas */
+  text-transform: uppercase;
   border: none;
-  border-radius: 30px; /* Cantos arredondados */
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #003d82; /* Alteração de cor no hover */
+  background-color: #003d82;
 }
 
 .banner-image {
@@ -174,17 +170,20 @@ body {
 /* 1.2. Sobre Nós */
 /* Estilo geral da seção */
 .about-us {
-  padding: 60px 20px;
+  padding: 0;
   background-color: #f9f9f9;
-  text-align: center;
+  text-align: left;
 }
 
+/* Realinha o título da seção para a esquerda */
 .section-title {
-  font-family: 'Playfair Display', serif; /* Fonte elegante */
+  font-family: 'Inter', sans-serif;
   font-size: 2.5em;
   font-weight: 700;
   color: #00274d;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  text-align: left; /* Título alinhado à esquerda */
+  margin-left: 12%; /* Espaçamento da margem esquerda */
 }
 
 .about-content {
@@ -200,7 +199,7 @@ body {
 .text-content {
   max-width: 600px;
   text-align: left;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #333;
   line-height: 1.8;
   font-size: 1.1em;
@@ -227,6 +226,14 @@ body {
   transform: scale(1.05); /* Zoom suave ao passar o mouse */
 }
 
+.logo {
+  width: 150px; /* Ajuste do tamanho da logo */
+  border: 4px solid white; /* Borda branca */
+  border-radius: 50%; /* Arredondar as bordas para um efeito circular */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona um leve efeito de sombra */
+  padding: 5px; /* Espaçamento interno para destacar a borda */
+} 
+
 /* Estilo da seção Nossos Serviços */
 .services {
   padding: 60px 20px;
@@ -234,8 +241,8 @@ body {
   text-align: center;
 }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
+.section-title-1 {
+  font-family: 'Inter', sans-serif;
   font-size: 2.5em;
   font-weight: 700;
   color: #00274d;
@@ -271,7 +278,7 @@ body {
 }
 
 .service h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5em;
   font-weight: 600;
   color: #0056b3;
@@ -279,7 +286,7 @@ body {
 }
 
 .service p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1em;
   color: #555;
   padding: 0 20px 20px;
@@ -302,7 +309,6 @@ body {
   background-color: #003f88;
 }
 
-
 /* Estilo da seção Depoimentos */
 .testimonials {
   padding: 60px 20px;
@@ -310,8 +316,8 @@ body {
   text-align: center;
 }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
+.section-title-2 {
+  font-family: 'Inter', sans-serif;
   font-size: 2.5em;
   font-weight: 700;
   color: #00274d;
@@ -350,7 +356,7 @@ body {
 }
 
 blockquote {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2em;
   font-style: italic;
   color: #555;
@@ -361,7 +367,7 @@ blockquote {
 
 blockquote:before {
   content: "“";
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3em;
   color: #0056b3;
   position: absolute;
@@ -371,7 +377,7 @@ blockquote:before {
 
 blockquote:after {
   content: "”";
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3em;
   color: #0056b3;
   position: absolute;
@@ -380,7 +386,7 @@ blockquote:after {
 }
 
 .testimonial-author {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1em;
   font-weight: bold;
   color: #333;

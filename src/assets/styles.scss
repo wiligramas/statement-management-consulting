@@ -1,9 +1,12 @@
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Cinza claro */
+  color: #333; /* Cor do texto para contraste */
+  font-family: 'Inter', sans-serif; /* Fonte global */
   margin: 0;
   padding: 0;
+}
+html, body {
+  font-family: 'Inter', sans-serif;
 }
 .header {
   display: flex;

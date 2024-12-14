@@ -3,7 +3,7 @@
     <!-- Introdução -->
     <section class="introduction">
       <div class="intro-banner">
-        <img src="@/assets/images/banner-placeholder.jpg" alt="Banner" class="banner-image" />
+        <img src="@/assets/images/team2.jpg" alt="Banner" class="banner-image" />
         <div class="banner-text">
           <h1 class="main-title">Transformando Desafios em Oportunidades</h1>
         </div>
@@ -97,8 +97,12 @@ export default {
 /* Banner da Introdução */
 .intro-banner {
   position: relative;
+  color: #555;
   height: 60vh;
   overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .banner-image {
@@ -128,7 +132,7 @@ export default {
 
 /* Introdução */
 .introduction {
-  padding: 60px 20px;
+  padding: 0;
   background-color: #f9f9f9;
 }
 
@@ -167,7 +171,7 @@ export default {
 /* Projetos de Sucesso */
 .success-stories {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
 }
 
 .projects {

@@ -1,102 +1,157 @@
 <template>
-  <div class="about">
-    <!-- 3.1. Introdução -->
-    <section class="introduction">
-      <h1>Cresça Conosco</h1>
-      <div class="intro-content">
-        <h2>Por que Trabalhar na Statement?</h2>
-        <p>
-          Aqui, você encontrará um ambiente dinâmico, repleto de aprendizado e oportunidades de crescimento.
-        </p>
-        <img src="@/assets/images/work-environment-placeholder.jpg" alt="Ambiente de trabalho" class="intro-image" />
+  <div class="careers-page">
+    <!-- Banner principal -->
+    <section class="hero-banner" style="background-image: url('@/assets/images/trabalhar-placeholder.jpg');">
+      <div class="banner-content">
+        <h1>Carreiras em Angola</h1>
       </div>
     </section>
 
-    <!-- 3.2. Vagas Abertas -->
-    <section class="open-positions">
-      <h2>Estamos Contratando</h2>
-      <ul class="positions">
-        <li>
-          <strong>Consultor Estratégico:</strong> 5 anos de experiência.
-        </li>
-        <li>
-          <strong>Analista de Processos:</strong> 2+ anos de experiência.
-        </li>
-      </ul>
-      <button class="cta-button">Envie seu currículo hoje mesmo</button>
+    <!-- O que procuramos -->
+    <section class="what-we-look-for">
+      <div class="section-title">O que procuramos</div>
+      <p>Procuramos pessoas talentosas com um currículo académico e profissional excelente e que querem fazer a diferença.</p>
     </section>
 
-    <!-- 3.3. Benefícios -->
-    <section class="benefits">
-      <h2>O Que Oferecemos</h2>
-      <ul class="benefits-list">
-        <li>Plano de carreira.</li>
-        <li>Treinamentos contínuos.</li>
-        <li>Ambiente inovador.</li>
-      </ul>
-      <img src="@/assets/images/benefits-placeholder.jpg" alt="Benefícios da equipe" class="benefits-image" />
+    <!-- Blocos informativos -->
+    <section class="info-blocks">
+      <div class="info-block">
+        <img src="@/assets/images/trabalhar-placeholder.jpg" alt="Trabalhar na McKinsey Angola" />
+        <h3>Trabalhar na McKinsey Angola</h3>
+        <p>Vais poder trabalhar com pessoas excepcionais em projetos que marcam a diferença para os nossos clientes, num processo de aprendizagem constante.</p>
+      </div>
+
+      <div class="info-block">
+        <img src="@/assets/images/opcoes-carreira-placeholder.jpg" alt="Opções de Carreira" />
+        <h3>Opções de Carreira</h3>
+        <p>Os processos de recrutamento são estandardizados e decorrem ao longo do ano para três posições: Analista, Associado Júnior e Associado.</p>
+      </div>
+
+      <div class="info-block">
+        <img src="@/assets/images/processo-candidatura-placeholder.jpg" alt="Processo de Candidatura" />
+        <h3>Processo de Candidatura</h3>
+        <p>Procuramos pessoas excepcionais com potencial para se tornarem os futuros líderes de negócios em Angola, em África e no Mundo.</p>
+      </div>
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="faq">
+      <button class="cta-button">Perguntas Frequentes</button>
+    </section>
+
+    <!-- Links adicionais -->
+    <section class="additional-links">
+      <div class="link">
+        <h4>Explora oportunidades em Angola</h4>
+        <a href="#">Procura oportunidades &rarr;</a>
+      </div>
+
+      <div class="link">
+        <h4>Já te candidataste a alguma posição?</h4>
+        <a href="#">Inscreve-te aqui &rarr;</a>
+      </div>
+
+      <div class="link">
+        <h4>Prepara-te para a entrevista</h4>
+        <a href="#">Sabe mais &rarr;</a>
+      </div>
+    </section>
+
+    <!-- Mensagem inspiradora -->
+    <section class="inspirational-message">
+      <div class="message-content">
+        <img src="@/assets/images/inspirational-placeholder.jpg" alt="Mensagem inspiradora" />
+        <p>
+          Todos os dias, ajudamos os nossos clientes a solucionar os maiores problemas, desenvolver capacidades e gerar resultados melhores.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact">
+      <h3>Entra em contacto com a nossa equipa de recrutamento</h3>
+      <button class="cta-button">Contactar</button>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AboutPage",
+  name: "CareersPage",
 };
 </script>
 
 <style scoped>
-/* Estilo Geral */
-.about {
+/* Estilo geral */
+.careers-page {
   font-family: Arial, sans-serif;
 }
 
-/* 3.1. Introdução */
-.introduction {
+/* Banner principal */
+.hero-banner {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banner-content h1 {
+  font-size: 2.5em;
+}
+
+/* O que procuramos */
+.what-we-look-for {
   padding: 40px 20px;
-  background-color: #f9f9f9;
   text-align: center;
 }
 
-.intro-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.intro-content h2 {
+.section-title {
   font-size: 1.8em;
   margin-bottom: 10px;
 }
 
-.intro-content p {
-  max-width: 600px;
+.what-we-look-for p {
   color: #555;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.intro-image {
-  width: 500px;
-  height: auto;
+/* Blocos informativos */
+.info-blocks {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.info-block {
+  max-width: 300px;
+  text-align: center;
+}
+
+.info-block img {
+  width: 100%;
   border-radius: 8px;
 }
 
-/* 3.2. Vagas Abertas */
-.open-positions {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #ffffff;
-}
-
-.positions {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.positions li {
+.info-block h3 {
+  margin-top: 15px;
   font-size: 1.2em;
-  margin-bottom: 10px;
+}
+
+.info-block p {
+  color: #555;
+}
+
+/* Perguntas frequentes */
+.faq {
+  text-align: center;
+  padding: 20px;
 }
 
 .cta-button {
@@ -113,26 +168,59 @@ export default {
   background-color: #003f82;
 }
 
-/* 3.3. Benefícios */
-.benefits {
-  padding: 40px 20px;
+/* Links adicionais */
+.additional-links {
+  display: flex;
+  justify-content: space-around;
   background-color: #f0f0f0;
+  padding: 40px 20px;
+}
+
+.link h4 {
+  margin-bottom: 10px;
+}
+
+.link a {
+  color: #0056b3;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Mensagem inspiradora */
+.inspirational-message {
+  padding: 40px 20px;
   text-align: center;
 }
 
-.benefits-list {
-  list-style-type: disc;
-  margin: 20px auto;
-  padding: 0;
-  max-width: 400px;
-  text-align: left;
-  color: #555;
+.message-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.benefits-image {
-  margin-top: 20px;
-  width: 500px;
-  height: auto;
+.message-content img {
+  width: 100%;
   border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.message-content p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Contato */
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
 }
 </style>
