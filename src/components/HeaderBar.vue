@@ -1,120 +1,85 @@
 <template>
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <router-link to="/">Statement Management Consulting</router-link>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container">
+        <!-- Logo -->
+        <router-link class="navbar-brand" to="/">
+         <img src="../assets/images/logo-placeholder.png" style="border-radius: 10px;" />
+        </router-link>
+        <!-- Botão de Menu para Mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links do Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <router-link class="nav-link" to="/">Início</router-link>
+            </li>
+            <li class="nav-item ">
+              <router-link class="nav-link" to="/portifolho">Portfólio</router-link>               
+            
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/about">Carreira</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/insights">Blog</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/contact">Contacte-nos</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <router-link to="/">Início</router-link>
-          </li>
-          <li class="nav-item dropdown">
-            <router-link to="/Services">Portfólio</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about">Carreira</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/insights">Notícias</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/contact">Contacte-nos</router-link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    </nav>
   </header>
 </template>
 
 <script>
+//import logo from './assets/images/logo-placeholder.png';
 export default {
   name: "HeaderBar",
 };
 </script>
 
 <style lang="scss" scoped>
-.header {
-  background-color: #042239; /* Atualizado para a cor desejada */
-  padding: 1.5rem 2rem;
-  color: white;
+/* Estilos Personalizados */
+.navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  background: #042239 !important;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-
-      a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #1a73e8; /* Destaque ao passar o mouse */
-        }
-      }
+  .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    &:hover {
+      color: #1a73e8 !important;
     }
+  }
 
-    .nav {
-      .nav-list {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
+  .nav-link {
+    font-weight: 500;
+    &:hover {
+      color: #1a73e8 !important;
+    }
+  }
 
-        .nav-item {
-          position: relative;
-
-          a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-
-            &:hover {
-              color: #1a73e8;
-            }
-          }
-
-          &.dropdown:hover .dropdown-menu {
-            display: block;
-          }
-
-          .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            list-style: none;
-            padding: 0.8rem 1rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-
-            li {
-              margin-bottom: 0.5rem;
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-
-              a {
-                color: #042239;
-                font-weight: 400;
-                transition: color 0.3s ease;
-
-                &:hover {
-                  color: #1a73e8;
-                }
-              }
-            }
-          }
-        }
+  .dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    a {
+      color: #042239;
+      &:hover {
+        color: #1a73e8 !important;
       }
     }
   }

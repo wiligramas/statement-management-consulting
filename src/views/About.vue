@@ -1,226 +1,288 @@
 <template>
-  <div class="careers-page">
-    <!-- Banner principal -->
-    <section class="hero-banner" style="background-image: url('@/assets/images/trabalhar-placeholder.jpg');">
-      <div class="banner-content">
-        <h1>Carreiras em Angola</h1>
-      </div>
-    </section>
-
-    <!-- O que procuramos -->
-    <section class="what-we-look-for">
-      <div class="section-title">O que procuramos</div>
-      <p>Procuramos pessoas talentosas com um currículo académico e profissional excelente e que querem fazer a diferença.</p>
-    </section>
-
-    <!-- Blocos informativos -->
-    <section class="info-blocks">
-      <div class="info-block">
-        <img src="@/assets/images/trabalhar-placeholder.jpg" alt="Trabalhar na McKinsey Angola" />
-        <h3>Trabalhar na McKinsey Angola</h3>
-        <p>Vais poder trabalhar com pessoas excepcionais em projetos que marcam a diferença para os nossos clientes, num processo de aprendizagem constante.</p>
-      </div>
-
-      <div class="info-block">
-        <img src="@/assets/images/opcoes-carreira-placeholder.jpg" alt="Opções de Carreira" />
-        <h3>Opções de Carreira</h3>
-        <p>Os processos de recrutamento são estandardizados e decorrem ao longo do ano para três posições: Analista, Associado Júnior e Associado.</p>
-      </div>
-
-      <div class="info-block">
-        <img src="@/assets/images/processo-candidatura-placeholder.jpg" alt="Processo de Candidatura" />
-        <h3>Processo de Candidatura</h3>
-        <p>Procuramos pessoas excepcionais com potencial para se tornarem os futuros líderes de negócios em Angola, em África e no Mundo.</p>
-      </div>
-    </section>
-
-    <!-- Perguntas frequentes -->
-    <section class="faq">
-      <button class="cta-button">Perguntas Frequentes</button>
-    </section>
-
-    <!-- Links adicionais -->
-    <section class="additional-links">
-      <div class="link">
-        <h4>Explora oportunidades em Angola</h4>
-        <a href="#">Procura oportunidades &rarr;</a>
-      </div>
-
-      <div class="link">
-        <h4>Já te candidataste a alguma posição?</h4>
-        <a href="#">Inscreve-te aqui &rarr;</a>
-      </div>
-
-      <div class="link">
-        <h4>Prepara-te para a entrevista</h4>
-        <a href="#">Sabe mais &rarr;</a>
-      </div>
-    </section>
-
-    <!-- Mensagem inspiradora -->
-    <section class="inspirational-message">
-      <div class="message-content">
-        <img src="@/assets/images/inspirational-placeholder.jpg" alt="Mensagem inspiradora" />
+  <div class="career-page">
+    <!-- 1. Cabeçalho -->
+    <section class="career-header">
+      <div class="header-content">
+        <h1>Venha Crescer Conosco</h1>
         <p>
-          Todos os dias, ajudamos os nossos clientes a solucionar os maiores problemas, desenvolver capacidades e gerar resultados melhores.
+          Somos uma equipe apaixonada por inovação e resultados. Oferecemos um ambiente
+          inspirador para seu crescimento profissional. Descubra como é trabalhar em nossa
+          empresa!
         </p>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section class="contact">
-      <h3>Entra em contacto com a nossa equipa de recrutamento</h3>
-      <button class="cta-button">Contactar</button>
+    <!-- 2. Por Que Trabalhar Conosco -->
+    <section class="why-join-us">
+      <h2>Por Que Trabalhar Conosco?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <img src="@/assets/images/team-placeholder.jpg" alt="Cultura Inclusiva" />
+          <h3>Cultura Inclusiva</h3>
+          <p>
+            Priorizamos a diversidade e a inclusão em todos os níveis, criando um ambiente onde
+            cada voz é valorizada.
+          </p>
+        </div>
+        <div class="why-card">
+          <img src="@/assets/images/banner-placeholder.jpg" alt="Crescimento Profissional" />
+          <h3>Crescimento Profissional</h3>
+          <p>
+            Oferecemos oportunidades de aprendizado contínuo, treinamentos e planos de carreira.
+          </p>
+        </div>
+        <div class="why-card">
+          <img src="@/assets/images/process-management-placeholder.jpg" alt="Tecnologia de Ponta" />
+          <h3>Tecnologia de Ponta</h3>
+          <p>
+            Trabalhamos com ferramentas modernas e soluções tecnológicas para inovar em cada
+            projeto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Vagas Disponíveis -->
+    <section class="job-openings">
+      <h2>Vagas Disponíveis</h2>
+      <div class="job-list">
+        <div
+          v-for="(job, index) in jobs"
+          :key="index"
+          class="job-card"
+        >
+          <h3>{{ job.title }}</h3>
+          <p><strong>Local:</strong> {{ job.location }}</p>
+          <p><strong>Tipo:</strong> {{ job.type }}</p>
+          <p>{{ job.description }}</p>
+          <button @click="applyJob(job.title)">Candidatar-se</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Valores da Empresa -->
+    <section class="company-values">
+      <h2>Nossos Valores</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Integridade</h3>
+          <p>Trabalhamos com ética, transparência e compromisso em tudo o que fazemos.</p>
+        </div>
+        <div class="value-card">
+          <h3>Inovação</h3>
+          <p>Valorizamos a criatividade e incentivamos novas ideias para criar soluções únicas.</p>
+        </div>
+        <div class="value-card">
+          <h3>Colaboração</h3>
+          <p>Nosso sucesso vem do trabalho em equipe e da união de diferentes talentos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Chamada para Ação -->
+    <section class="cta-section">
+      <h2>Pronto Para Fazer Parte do Nosso Time?</h2>
+      <p>
+        Estamos sempre em busca de novos talentos. Envie seu currículo e venha crescer conosco.
+      </p>
+      <button class="cta-button" @click="redirectToApply">
+        Enviar Currículo
+      </button>
     </section>
   </div>
 </template>
 
 <script>
+// eslint-disable
 export default {
-  name: "CareersPage",
+  name: "CareerPage",
+  data() {
+    return {
+      jobs: [
+        {
+          title: "Desenvolvedor Frontend",
+          location: "Remoto",
+          type: "Tempo Integral",
+          description: "Responsável por criar interfaces modernas e responsivas.",
+        },
+        {
+          title: "Designer UX/UI",
+          location: "São Paulo, SP",
+          type: "Presencial",
+          description: "Criação de experiências visuais e funcionais incríveis.",
+        },
+        {
+          title: "Gerente de Projetos",
+          location: "Híbrido",
+          type: "Tempo Integral",
+          description: "Gerenciamento de projetos complexos com foco em resultados.",
+        },
+        {
+          title: "Analista de Dados",
+          location: "Remoto",
+          type: "Tempo Integral",
+          description: "Análise e interpretação de dados para tomada de decisões estratégicas.",
+        },
+      ],
+    };
+  },
+  methods: {
+    applyJob(jobTitle) {
+      alert(`Você está se candidatando à vaga: ${jobTitle}`);
+    },
+    redirectToApply() {
+      window.open("https://www.placeholder-jobs.com", "_blank");
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Estilo geral */
-.careers-page {
+/* Global */
+.career-page {
   font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Banner principal */
-.hero-banner {
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.banner-content h1 {
-  font-size: 2.5em;
-}
-
-/* O que procuramos */
-.what-we-look-for {
-  padding: 40px 20px;
+/* Cabeçalho */
+.career-header {
+  background: url("../assets/images/work-environment-placeholder.jpg") center/cover no-repeat;
+  color: #fff;
   text-align: center;
+  padding: 310px;
 }
 
-.section-title {
-  font-size: 1.8em;
+.career-header h1 {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.what-we-look-for p {
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto;
+.career-header p {
+  font-size: 1.3rem;
 }
 
-/* Blocos informativos */
-.info-blocks {
+/* Por Que Trabalhar Conosco */
+.why-join-us {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.why-grid {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 40px 20px;
+  justify-content: center;
 }
 
-.info-block {
-  max-width: 300px;
-  text-align: center;
-}
-
-.info-block img {
-  width: 100%;
+.why-card {
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  max-width: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-block h3 {
-  margin-top: 15px;
-  font-size: 1.2em;
+.why-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.info-block p {
-  color: #555;
+.why-card h3 {
+  margin: 15px 0 10px;
+  color: #00274d;
 }
 
-/* Perguntas frequentes */
-.faq {
+.why-card p {
+  padding: 0 15px 15px;
+  font-size: 0.95rem;
+}
+
+/* Vagas Disponíveis */
+.job-openings {
+  padding: 50px 20px;
   text-align: center;
+}
+
+.job-card {
+  border: 1px solid #ddd;
+  margin: 15px auto;
+  padding: 15px;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.job-card button {
+  background: #00274d;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.job-card button:hover {
+  background: #00274d;
+}
+
+/* Valores da Empresa */
+.company-values {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.values-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background: #fff;
   padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+  color: #00274d;
+}
+
+/* Chamada para Ação */
+.cta-section {
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .cta-button {
-  padding: 10px 20px;
-  background-color: #0056b3;
-  color: white;
+  background: #00274d;
+  color: #fff;
   border: none;
+  padding: 10px 25px;
   border-radius: 5px;
+  font-size: 1.1rem;
   cursor: pointer;
-  font-size: 1em;
 }
 
 .cta-button:hover {
-  background-color: #003f82;
+  background: #0056b3;
 }
 
-/* Links adicionais */
-.additional-links {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f0f0f0;
-  padding: 40px 20px;
-}
+@media (max-width: 768px) {
+  .why-grid,
+  .values-grid {
+    flex-direction: column;
+  }
 
-.link h4 {
-  margin-bottom: 10px;
-}
-
-.link a {
-  color: #0056b3;
-  text-decoration: none;
-  font-size: 1em;
-}
-
-.link a:hover {
-  text-decoration: underline;
-}
-
-/* Mensagem inspiradora */
-.inspirational-message {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.message-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.message-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.message-content p {
-  font-size: 1.2em;
-  color: #333;
-}
-
-/* Contato */
-.contact {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-}
-
-.contact h3 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
+  .career-header h1 {
+    font-size: 2.5rem;
+  }
 }
 </style>

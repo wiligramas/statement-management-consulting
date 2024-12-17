@@ -1,215 +1,160 @@
 <template>
-  <div class="contact-us">
-    <!-- Título Principal -->
-    <h1 class="contact-title">Estamos Aqui Para Ajudar</h1>
+  <section style="margin-top: 150px;">
+    <div class="container">
+      <!-- Seção de informações -->
+      <div class="info-box">
+        <h1>Luanda</h1>
+        <p>Rua 28 de Maio,<br />
+          Edifício Kende,<br />
+          7º andar<br />
+          Maianga<br />
+          Luanda, Angola</p>
+        <p><strong>Tel:</strong> +224 938-613-955<br />
+          <strong>WhatsApp:</strong> +224 938-613-955</p>
+      </div>
 
-    <!-- Formulário de Contato -->
-    <section class="contact-form">
-      <h2>Fale Conosco</h2>
-      <form>
-        <div class="form-group">
-          <label for="name">Nome*</label>
-          <input type="text" id="name" placeholder="Digite seu nome" required />
-        </div>
-        <div class="form-group">
-          <label for="email">E-mail*</label>
-          <input type="email" id="email" placeholder="Digite seu e-mail" required />
-        </div>
-        <div class="form-group">
-          <label for="subject">Assunto*</label>
-          <input type="text" id="subject" placeholder="Digite o assunto" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Mensagem*</label>
-          <textarea id="message" placeholder="Digite sua mensagem" required></textarea>
-        </div>
-        <button type="submit" class="submit-button">Envie sua mensagem</button>
+      <!-- Seção do mapa -->
+      <div class="map-box">
+        <iframe
+          width="100%"
+          height="100%"
+          style="border: 0"
+          loading="lazy"
+          :src="mapSrc"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="form-container">
+      <h2>Entre em Contato</h2>
+      <form @submit.prevent="submitForm">
+        <!-- Tipo de Consulta -->
+        <label><strong>TIPO DE CONSULTA *</strong></label><br />
+        <label>
+          <input type="radio" v-model="form.tipoConsulta" value="Atendimento ao cliente" />
+          Atendimento ao cliente e consultas gerais
+        </label><br />
+        <label>
+          <input type="radio" v-model="form.tipoConsulta" value="Consultas da mídia" />
+          Consultas da mídia
+        </label><br />
+        <label>
+          <input type="radio" v-model="form.tipoConsulta" value="Consultas de recrutamento" />
+          Consultas de recrutamento
+        </label><br /><br />
+
+        <!-- Nome -->
+        <label for="name">Nome *</label>
+        <input type="text" id="name" v-model="form.name" required /><br />
+
+        <!-- Email -->
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" v-model="form.email" required /><br />
+
+        <!-- Assunto -->
+        <label for="assunto">Assunto *</label>
+        <input type="text" id="assunto" v-model="form.assunto" required /><br />
+
+        <!-- Mensagem -->
+        <label for="message">Mensagem *</label>
+        <textarea id="message" v-model="form.message" required></textarea><br />
+
+        <!-- Botão de envio -->
+        <button type="submit">Enviar</button>
       </form>
-    </section>
-
-    <!-- Mapa e Localização -->
-    <section class="location">
-      <h2>Onde Estamos</h2>
-      <p>Visite-nos em nosso escritório para uma consulta.</p>
-      <div class="map">
-        <!-- Mapa fictício (substituir pela integração real, como Google Maps) -->
-        <img src="@/assets/images/map-placeholder.jpg" alt="Mapa de Localização" />
-      </div>
-    </section>
-
-    <!-- Redes Sociais -->
-    <section class="social-media">
-      <h2>Conecte-se Conosco</h2>
-      <p>Fique por dentro das novidades e tendências seguindo nossas redes sociais:</p>
-      <div class="social-links">
-        <a href="#" target="_blank" class="social-link">
-          <img src="@/assets/images/linkedin-icon.png" alt="LinkedIn" />
-          LinkedIn
-        </a>
-        <a href="#" target="_blank" class="social-link">
-          <img src="@/assets/images/instagram-icon.png" alt="Instagram" />
-          Instagram
-        </a>
-        <a href="#" target="_blank" class="social-link">
-          <img src="@/assets/images/facebook-icon.png" alt="Facebook" />
-          Facebook
-        </a>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: "ContactPage",
+  data() {
+    return {
+      form: {
+        tipoConsulta: '',
+        name: '',
+        email: '',
+        assunto: '',
+        message: ''
+      },
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1234567890!2d-122.4194157481234!3d37.7749295481234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818e12345678%3A0x1234567890abcdef!2sExemplo!5e0!3m2!1spt-BR!2sbr!4v1612345678901!5m2!1spt-BR!2sbr'
+    };
+  },
+  methods: {
+    submitForm() {
+      console.log('Formulário enviado:', this.form);
+      alert("Formulário enviado com sucesso!");
+      // Limpar o formulário
+      this.form = {
+        tipoConsulta: '',
+        name: '',
+        email: '',
+        assunto: '',
+        message: ''
+      };
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* Estilo Geral */
-.contact-us {
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-  color: #002b5c;
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 
-/* Título Principal */
-.contact-title {
-  font-size: 2.25rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
+.info-box {
+  width: 40%;
+  padding: 40px;
+  background-color: #002433;
+  color: #ffffff;
 }
 
-/* Formulário de Contato */
-.contact-form {
-  background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 0.625rem;
-  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 2.5rem;
+.map-box {
+  width: 60%;
 }
 
-.contact-form h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1.25rem;
-  text-align: center;
+.form-container {
+  padding: 20px;
+  background-color: #f8f8f8;
+  margin: 20px auto; /* Centraliza horizontalmente */
+  max-width: 600px; /* Define uma largura máxima */
+  border: 1px solid #ddd; /* Adiciona uma borda sutil */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Efeito sombra leve */
 }
 
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-label {
+form label {
   display: block;
-  font-size: 1rem;
-  margin-bottom: 0.3125rem;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-input,
-textarea {
+form input,
+form textarea {
   width: 100%;
-  padding: 0.625rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.3125rem;
-  font-size: 1rem;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
 }
 
-textarea {
-  height: 6.25rem;
-}
-
-.submit-button {
-  background-color: #002b5c;
-  color: white;
-  padding: 0.625rem 1.25rem;
+button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #002433;
+  color: #fff;
   border: none;
-  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 1rem;
-  margin-top: 0.625rem;
 }
 
-.submit-button:hover {
-  background-color: #004080;
+button:hover {
+  background-color: #00567e;
 }
 
-/* Mapa e Localização */
-.location {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.location h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.625rem;
-}
-
-.map img {
-  max-width: 100%;
-  border-radius: 0.625rem;
-  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-}
-
-/* Redes Sociais */
-.social-media {
-  text-align: center;
-}
-
-.social-media h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.625rem;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #002b5c;
-  font-size: 1.125rem;
-}
-
-.social-link img {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.625rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .contact-form, .location, .social-media {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .contact-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .contact-form h2,
-  .location h2,
-  .social-media h2 {
-    font-size: 1.5rem;
-  }
-
-  .form-group {
-    margin-bottom: 1rem;
-  }
-
-  .label {
-    font-size: 0.875rem;
-  }
-  
-  .submit-button {
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
-  }
-}
 </style>

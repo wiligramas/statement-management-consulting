@@ -1,28 +1,27 @@
 <template>
   <div class="insights">
     <!-- Hero Section -->
-    <section class="hero">
-      <h1>Percepções</h1>
+    <section class="hero" style="margin-top: 100px;">
+      <h1 style="text-align: center;color: #042236;">Insights Estratégicos</h1>
       <p>
-        Publicações, análises de especialistas e perspectivas inovadoras para líderes que
-        buscam um crescimento constante e sustentável.
+        Nosso blog é o espaço onde compartilhamos tendências de mercado, análises de casos, boas práticas e insights estratégicos. Aqui, você encontra ideias que ajudam a tomar decisões informadas e a navegar com confiança pelas complexidades do mundo dos negócios.
       </p>
     </section>
 
     <!-- Filter Section -->
     <section class="filters">
       <div class="filter-buttons">
-        <button>Indústrias</button>
-        <button>Serviços</button>
-        <button>Tópicos em destaque</button>
-        <button>Tipos</button>
+        <button>Insights e Tendências</button>
+        <button>Casos de Sucesso</button>
+        <button>Estratégia e Processos</button>
+        <button>Economia e Mercados</button>
       </div>
     </section>
 
     <!-- Main Articles Section -->
     <section class="main-articles">
       <div class="featured-article">
-        <img :src="images.featured" alt="Artigo em destaque">
+        <img src="@/assets/images/work-environment-placeholder.jpg" alt="Artigo em destaque">
         <div class="content">
           <span class="category">Estratégia e análise</span>
           <h2>Pontos de inflexão: quando apostar em novas tecnologias</h2>
@@ -35,13 +34,16 @@
       </div>
       <aside class="recommended">
         <h3>Recomendado</h3>
-        <ul>
-          <li>O futuro do varejo: Modelos vencedores para uma nova era</li>
-          <li>Transformação digital: Um marco no crescimento empresarial</li>
-          <li>Administração de crises e recuperação em tempos de incerteza</li>
-          <li>Integração de processos: O sistema único como vantagem competitiva</li>
-          <li>ESG na prática: Financiar uma transição para o futuro</li>
-        </ul>
+        <div class="row mb-4 border-bottom pb-3"  v-for="(prinicipal, index) in prinicipal" :key="index">
+        <div class="col-4">
+            <img :src="prinicipal.image" class="img-fluid" alt="Notícia 2">
+        </div>
+        <div class="col-8">
+            <h5 class="mb-1">{{ prinicipal.title }}</h5>
+            <small class="text-muted">{{ prinicipal.date }}</small>
+        </div>
+    </div>
+
       </aside>
     </section>
 
@@ -58,16 +60,29 @@
     <!-- Newsletter Section -->
     <section class="newsletter">
       <h2>Insights em Foco</h2>
-      <p>
-        Quer saber mais sobre tópicos específicos? Escolha os boletins informativos
-        abaixo e acompanhe as novas tendências.
-      </p>
-      <button>Escolher Meu Newsletter</button>
-    </section>
 
-    <!-- Load More Section -->
-    <section class="load-more">
-      <button>Carregar Mais</button>
+      <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">
+            Quer saber mais sobre tópicos específicos? Escolha os boletins informativos
+        abaixo e acompanhe as novas tendências.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <form class="d-flex align-items-center">
+            <input type="email" class="form-control me-2" placeholder="Seu Endereço de Email" aria-label="Email">
+            <button type="submit" class="btn btn-subscribe">Newsletter</button>
+          </form>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" value="" id="privacyPolicy">
+            <label class="form-check-label privacy-policy" for="privacyPolicy">
+             
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
   </div>
 </template>
@@ -78,44 +93,86 @@ export default {
   data() {
     return {
       images: {
-        featured: "/images/featured-article.jpg",
-        placeholder: "/images/article-placeholder.jpg",
+        featured: "@/assets/images/featured-article.jpg",
+        placeholder: "/src/assets/images/article-placeholder.jpg",
       },
       articles: [
         {
           title: "Melhorando a produtividade nas operações industriais",
           description: "Dicas e práticas para transformar operações com impacto positivo.",
-          image: "/images/article-1.jpg",
+          image: require('@/assets/images/pexels-tamillesesposito-25568827.jpg'),
           date: "12 de dezembro de 2024",
         },
         {
           title: "Tendências em sustentabilidade empresarial",
           description: "Como as empresas estão liderando a mudança em ESG.",
-          image: "/images/article-2.jpg",
+          image: require('@/assets/images/pexels-shkrabaanthony-5816291.jpg'),
           date: "10 de dezembro de 2024",
         },
         {
           title: "A revolução da inteligência artificial no varejo",
           description: "Explorando as oportunidades criadas pela IA no setor.",
-          image: "/images/article-3.jpg",
+          image: require('@/assets/images/pexels-thirdman-5327914.jpg'),
           date: "8 de dezembro de 2024",
         },
         {
           title: "Estratégias de crescimento para startups",
           description: "Acelerando o crescimento com insights estratégicos.",
-          image: "/images/article-4.jpg",
+          image: require('@/assets/images/team1.jpg'),
           date: "5 de dezembro de 2024",
         },
         {
           title: "Transformação digital em instituições financeiras",
           description: "Os desafios e oportunidades da modernização tecnológica.",
-          image: "/images/article-5.jpg",
+          image: require('@/assets/images/processo-candidatura-placeholder.jpg'),
           date: "3 de dezembro de 2024",
         },
         {
           title: "A importância da cultura organizacional",
           description: "Criando ambientes de trabalho saudáveis e produtivos.",
-          image: "/images/article-6.jpg",
+          image: require('@/assets/images/costa-rica-7479062_1280.jpg'),
+          date: "1 de dezembro de 2024",
+        },
+
+        {
+          title: "A importância da cultura organizacional2",
+          description: "Criando ambientes de trabalho saudáveis e produtivos.",
+          image: require('@/assets/images/pexels-mikhail-nilov-7679562.jpg'),
+          date: "1 de dezembro de 2024",
+        },
+
+        {
+          title: "A importância da cultura organizacional3",
+          description: "Criando ambientes de trabalho saudáveis e produtivos.",
+          image: require('@/assets/images/vietnam-9069634_640.png'),
+          date: "1 de dezembro de 2024",
+        },
+
+        {
+          title: "A importância da cultura organizacional4",
+          description: "Criando ambientes de trabalho saudáveis e produtivos.",
+          image: require('@/assets/images/webinar-placeholder.jpg'),
+          date: "1 de dezembro de 2024",
+        },
+      ],
+      prinicipal:[
+        {
+          title: "5 Tendências para Transformação Digital em Empresas",
+          description: "Descrição 1",
+          image: require('@/assets/images/webinar-placeholder.jpg'),
+          date: "1 de dezembro de 2024",
+        },
+
+        {
+          title: "Como Gerenciar Mudanças Organizacionais com Sucesso",
+          description: "Descrição 1",
+          image: require('@/assets/images/processo-candidatura-placeholder.jpg'),
+          date: "1 de dezembro de 2024",
+        },
+        {
+          title: "Estratégias para Otimizar Processos e Reduzir Custos",
+          description: "Descrição 1",
+          image: require('@/assets/images/pexels-tamillesesposito-25568827.jpg'),
           date: "1 de dezembro de 2024",
         },
       ],
@@ -137,7 +194,7 @@ export default {
 /* Hero Section */
 /*****************************/
 .hero {
-  text-align: center;
+  text-align: justify;
   padding: 20px;
   background-color: #f4f4f4;
 }
@@ -168,7 +225,18 @@ export default {
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
+
+  /* Adicionando transição */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.filter-buttons button:hover,
+.filter-buttons button:active {
+  background-color: #042236;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 /*****************************/
 /* Main Articles Section */
@@ -216,15 +284,12 @@ export default {
 
 .recommended {
   flex: 1;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  padding: 10px;  
 }
 
 .recommended h3 {
   font-size: 1.2em;
-  color: #b11116;
+  color: #042236;
 }
 
 .recommended ul {
@@ -264,12 +329,13 @@ export default {
 
 .article h4 {
   font-size: 1.2em;
-  color: #b11116;
+  color: #042236;
 }
 
 .article p {
   font-size: 0.9em;
-  color: #555;
+  color: #333;
+  text-align: justify;
 }
 
 .article .date {
@@ -288,7 +354,7 @@ export default {
 
 .newsletter h2 {
   font-size: 1.8em;
-  color: #b11116;
+  color: #042236;
 }
 
 .newsletter p {
@@ -296,7 +362,7 @@ export default {
 }
 
 .newsletter button {
-  background-color: #b11116;
+  background-color: #042236;
   color: #fff;
   padding: 10px 20px;
   border: none;

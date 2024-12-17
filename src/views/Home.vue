@@ -6,7 +6,7 @@
         
         <h1>Inovação e Estratégia para<br> o Sucesso do Seu Negócio</h1>
         <p>Transformando desafios em oportunidades estratégicas.</p>
-        <button class="cta-button">Saiba Mais</button>
+        <button class="cta-button"> <router-link to="/portifolho" style="text-decoration: none; color: white;">Saber Mais</router-link> </button>
       </div>
       <img src="@/assets/images/banner-placeholder.jpg" alt="Banner Principal" class="banner-image" />
     </section>
@@ -63,6 +63,28 @@
   <button class="cta-button">Saiba mais sobre nosso portfólio</button>
 </section>
 
+<!-- 1.2. Sobre Nós -->
+ <section style="background-color: #f9f9f9;">
+ <div class="container" >
+
+<div class="row">
+  <h2 class="section-title" style="margin-bottom: 25px;">Por que contratar a Statement Management Consulting?</h2>
+    <div class="col-md-8 col-sm-12">
+      <div class="about-content">
+        <div class="text-content">
+          <p>
+            Escolher a <strong> Statement Management Consulting </strong>é optar por um parceiro que entende a complexidade dos negócios e está comprometido em oferecer soluções eficazes. Nossos consultores são especialistas em unir conhecimento técnico com insights estratégicos, sempre com foco em resultados. Somos reconhecidos por nossa abordagem personalizada, transparência e compromisso com a excelência. Deixe-nos transformar seus desafios em oportunidades de crescimento.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <img src="@/assets/images/team-placeholder.jpg" alt="Equipe da Empresa" class="about-image" />
+    </div>
+</div>
+</div>
+</section>
   <section class="testimonials">
   <h2 class="section-title-2">O Que Nossos Clientes Dizem</h2>
   <div class="testimonials-container">
@@ -93,6 +115,10 @@ export default {
 
 <style scoped>
 /* Estilo geral */
+
+body {
+  background-color: #f9f9f9;
+}
 .home {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -168,7 +194,6 @@ body {
 }
 
 /* 1.2. Sobre Nós */
-/* Estilo geral da seção */
 .about-us {
   padding: 0;
   background-color: #f9f9f9;
@@ -181,7 +206,7 @@ body {
   font-size: 2.5em;
   font-weight: 700;
   color: #00274d;
-  margin-bottom: 0;
+  margin-top: 20px;
   text-align: left; /* Título alinhado à esquerda */
   margin-left: 12%; /* Espaçamento da margem esquerda */
 }
@@ -198,11 +223,11 @@ body {
 
 .text-content {
   max-width: 600px;
-  text-align: left;
+  text-align: justify;
   font-family: 'Inter', sans-serif;
   color: #333;
-  line-height: 1.8;
-  font-size: 1.1em;
+  line-height: 1.5;
+  font-size: 1em;
 }
 
 .text-content p {
@@ -220,9 +245,62 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efeito de profundidade */
   object-fit: cover;
   transition: transform 0.3s ease;
+ 
 }
 
 .about-image:hover {
+  transform: scale(1.05); /* Zoom suave ao passar o mouse */
+}
+
+
+/* 1.2. Sobre Nós */
+.about-us-01 {
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Realinha o título da seção para a esquerda */
+.section-title-01 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #00274d;
+  text-align: left; /* Título alinhado à esquerda */
+  margin-left: 12%; /* Espaçamento da margem esquerda */
+}
+
+.about-content-01 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-content-01 {
+  max-width: 600px;
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+
+.about-image-01 {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efeito de profundidade */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.about-image-01:hover {
   transform: scale(1.05); /* Zoom suave ao passar o mouse */
 }
 
@@ -281,16 +359,17 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1.5em;
   font-weight: 600;
-  color: #0056b3;
+  color: #042239;
   padding: 15px 20px;
 }
 
 .service p {
   font-family: 'Inter', sans-serif;
   font-size: 1em;
-  color: #555;
+  color: #333;
   padding: 0 20px 20px;
   line-height: 1.6;
+  text-align: left;
 }
 
 .cta-button {

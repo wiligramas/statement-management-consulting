@@ -8,7 +8,7 @@ import InsightsPage from '@/views/Insights.vue';
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
   { path: '/about', name: 'About', component: AboutPage },
-  { path: '/Services', name: 'Services', component: ServicesPage }, 
+  { path: '/portifolho', name: 'portifolho', component: ServicesPage }, 
   { path: '/Insights', name: 'Insights', component: InsightsPage }, 
   { path: '/Contact', name: 'Contact', component: ContactPage }, 
 ];
